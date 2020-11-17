@@ -50,6 +50,7 @@ suppressed if `android-compilation-no-buildenv-warning' is non nil.")
   "Return t if an Android makefile exists in DIRECTORY."
   ; Test for Android.mk first: more likely.
   (or (file-exists-p (concat directory "Android.mk"))
+      (file-exists-p (concat directory "Android.bp"))
       (file-exists-p (concat directory "Makefile"))))
 
 (defun android-find-makefile (topdir)
